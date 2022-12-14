@@ -30,8 +30,8 @@ for command in data[2:]: #skip $ cd /
         continue
     handle_ls(com[1:])
 
-s = 0
-for size in dirs.values():
-    if size <= 100000:
-        s += size
-print(s)
+s = 30000000 - (70000000 - dirs['/'])
+for size in sorted(dirs.values()):
+    if size >= s:
+        print(size)
+        break
